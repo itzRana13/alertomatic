@@ -27,11 +27,23 @@ const HeroSection = () => {
     <section className="relative min-h-screen pt-24 pb-16 px-6 flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-notify-darkgreen via-notify-darker to-black"></div>
       
-      {/* Green glow */}
+      {/* Enhanced background weaves */}
       <div className="absolute -top-20 left-1/4 w-96 h-96 bg-notify-neon/10 rounded-full blur-3xl -z-10 animate-pulse-light"></div>
-      
-      {/* Blue glow */}
       <div className="absolute top-60 right-1/4 w-96 h-96 bg-notify-green/10 rounded-full blur-3xl -z-10 animate-pulse-light animate-delay-500"></div>
+      
+      {/* New animated background elements */}
+      <div className="absolute top-1/3 right-10 w-64 h-64 bg-notify-lime/5 rounded-full blur-2xl -z-10 animate-float animate-delay-300"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-notify-neon/5 rounded-full blur-2xl -z-10 animate-pulse-light animate-delay-700"></div>
+      
+      {/* Animated grid lines */}
+      <div className="absolute inset-0 -z-10 opacity-10">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#9eff0022_1px,transparent_1px),linear-gradient(to_bottom,#9eff0022_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+      </div>
+      
+      {/* Floating particles */}
+      <div className="absolute top-1/4 left-10 w-3 h-3 rounded-full bg-notify-neon/40 animate-float"></div>
+      <div className="absolute bottom-1/4 right-20 w-2 h-2 rounded-full bg-notify-lime/40 animate-float animate-delay-300"></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 rounded-full bg-notify-green/30 animate-float animate-delay-600"></div>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center">
         <div className="space-y-6 animate-fade-in-up">
@@ -66,6 +78,13 @@ const HeroSection = () => {
         </div>
         
         <div className="relative flex justify-center">
+          {/* Animated decorative elements behind the phone */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-72 h-72 border border-notify-neon/10 rounded-full animate-[spin_30s_linear_infinite]"></div>
+            <div className="absolute w-96 h-96 border border-notify-lime/10 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+            <div className="absolute w-[500px] h-[500px] border border-notify-green/10 rounded-full animate-[spin_50s_linear_infinite]"></div>
+          </div>
+          
           <div className="relative z-10 animate-float">
             <div className="w-64 h-[500px] md:w-72 md:h-[560px] rounded-[40px] p-4 neo-glass border-[3px] border-notify-neon/30 neon-shadow">
               <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-black rounded-b-xl"></div>
