@@ -14,16 +14,20 @@ const Index = () => {
     // Initialize animations
     handleScrollAnimations();
     
+    // Re-run animations when elements become visible during scroll
+    window.addEventListener('scroll', handleScrollAnimations);
+    
     // Re-run on window resize to catch newly visible elements
     window.addEventListener('resize', handleScrollAnimations);
     
     return () => {
+      window.removeEventListener('scroll', handleScrollAnimations);
       window.removeEventListener('resize', handleScrollAnimations);
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-notify-darker text-white">
+    <div className="min-h-screen bg-notify-darker text-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <FeaturesSection />

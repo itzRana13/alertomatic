@@ -60,7 +60,11 @@ export default {
 					amber: '#F59E0B',
 					dark: '#0B0F19',
 					darker: '#070A12',
-					muted: '#1A1F2C'
+					muted: '#1A1F2C',
+					neon: '#9eff00',     // New vibrant green color from the image
+					green: '#63FF00',    // Bright green from the image
+					lime: '#8AFF44',     // Lighter green variant
+					darkgreen: '#141E0F' // Dark green background tone
 				}
 			},
 			borderRadius: {
@@ -104,6 +108,28 @@ export default {
 				'scale-in': {
 					'0%': { transform: 'scale(0.9)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'rotate-in': {
+					'0%': { transform: 'rotate(-10deg) scale(0.95)', opacity: '0' },
+					'100%': { transform: 'rotate(0) scale(1)', opacity: '1' }
+				},
+				'bounce-in': {
+					'0%': { transform: 'translateY(40px)', opacity: '0' },
+					'50%': { transform: 'translateY(-15px)' },
+					'70%': { transform: 'translateY(5px)' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'neon-pulse': {
+					'0%, 100%': { 
+						textShadow: '0 0 5px rgba(158, 255, 0, 0.5), 0 0 10px rgba(158, 255, 0, 0.3)'
+					},
+					'50%': { 
+						textShadow: '0 0 15px rgba(158, 255, 0, 0.8), 0 0 25px rgba(158, 255, 0, 0.5)'
+					}
+				},
+				'border-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(158, 255, 0, 0.5), 0 0 10px rgba(158, 255, 0, 0.3)' },
+					'50%': { boxShadow: '0 0 15px rgba(158, 255, 0, 0.8), 0 0 25px rgba(158, 255, 0, 0.5)' }
 				}
 			},
 			animation: {
@@ -115,7 +141,11 @@ export default {
 				'pulse-light': 'pulse-light 3s ease-in-out infinite',
 				'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
 				'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
-				'scale-in': 'scale-in 0.7s ease-out forwards'
+				'scale-in': 'scale-in 0.7s ease-out forwards',
+				'rotate-in': 'rotate-in 0.6s ease-out forwards',
+				'bounce-in': 'bounce-in 1s ease-out forwards',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+				'border-glow': 'border-glow 2s ease-in-out infinite'
 			}
 		}
 	},

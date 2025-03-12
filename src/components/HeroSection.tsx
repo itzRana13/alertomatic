@@ -25,39 +25,39 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen pt-24 pb-16 px-6 flex flex-col justify-center overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-notify-muted via-notify-dark to-notify-darker"></div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-notify-darkgreen via-notify-darker to-black"></div>
       
-      {/* Purple glow */}
-      <div className="absolute -top-20 left-1/4 w-96 h-96 bg-notify-purple/20 rounded-full blur-3xl -z-10"></div>
+      {/* Green glow */}
+      <div className="absolute -top-20 left-1/4 w-96 h-96 bg-notify-neon/10 rounded-full blur-3xl -z-10 animate-pulse-light"></div>
       
       {/* Blue glow */}
-      <div className="absolute top-60 right-1/4 w-96 h-96 bg-notify-blue/20 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-60 right-1/4 w-96 h-96 bg-notify-green/10 rounded-full blur-3xl -z-10 animate-pulse-light animate-delay-500"></div>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center">
         <div className="space-y-6 animate-fade-in-up">
-          <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
-            <Bell className="h-4 w-4 text-notify-purple" />
+          <div className="inline-flex items-center space-x-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-notify-neon/30 animate-bounce-in">
+            <Bell className="h-4 w-4 text-notify-neon" />
             <span className="text-sm font-medium">Stay Updated in Real Time!</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            Never Miss an <span className="gradient-text">Important</span> Update Again
+            Never Miss an <span className="neon-text animate-neon-pulse">Important</span> Update Again
           </h1>
           
-          <p className="text-lg text-white/80 max-w-lg">
+          <p className="text-lg text-white/80 max-w-lg animate-fade-in animate-delay-200">
             Notify delivers instant alerts when specific role IDs are mentioned in Discord, keeping you informed no matter where you are.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4 stagger-animation">
             <a 
               href="#download" 
-              className="button-transition bg-gradient-to-r from-notify-purple to-notify-blue text-white px-8 py-3 rounded-lg hover:shadow-lg hover:-translate-y-0.5 w-full sm:w-auto text-center"
+              className="button-transition bg-gradient-to-r from-notify-neon/80 to-notify-lime/80 text-black font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-notify-neon/20 hover:-translate-y-0.5 w-full sm:w-auto text-center animate-fade-in"
             >
               Download Now
             </a>
             <a 
               href="#how-it-works" 
-              className="button-transition group border border-white/10 bg-white/5 backdrop-blur-sm text-white px-8 py-3 rounded-lg hover:bg-white/10 w-full sm:w-auto text-center flex items-center justify-center space-x-2"
+              className="button-transition group border border-notify-neon/50 bg-black/40 backdrop-blur-sm text-white px-8 py-3 rounded-lg hover:border-notify-neon hover:bg-black/60 w-full sm:w-auto text-center flex items-center justify-center space-x-2 animate-fade-in"
             >
               <span>How It Works</span>
               <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
@@ -67,35 +67,35 @@ const HeroSection = () => {
         
         <div className="relative flex justify-center">
           <div className="relative z-10 animate-float">
-            <div className="w-64 h-[500px] md:w-72 md:h-[560px] rounded-[40px] p-4 glass-card border-[3px] border-white/10 app-shadow">
+            <div className="w-64 h-[500px] md:w-72 md:h-[560px] rounded-[40px] p-4 neo-glass border-[3px] border-notify-neon/30 neon-shadow">
               <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-black rounded-b-xl"></div>
-              <div className="w-full h-full bg-notify-darker/50 rounded-[32px] flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full bg-notify-darker/90 rounded-[32px] flex items-center justify-center overflow-hidden">
                 <div className="w-full h-full flex flex-col">
-                  <div className="py-3 px-4 border-b border-white/10 flex items-center space-x-3">
-                    <Bell className="h-5 w-5 text-notify-purple" />
+                  <div className="py-3 px-4 border-b border-notify-neon/20 flex items-center space-x-3">
+                    <Bell className="h-5 w-5 text-notify-neon animate-pulse-light" />
                     <span className="font-medium">Notify</span>
                   </div>
                   
                   <div className="flex-1 p-4 flex flex-col space-y-4 overflow-hidden">
-                    <div className="glass p-3 space-y-2 animate-pulse-light">
+                    <div className="neo-glass p-3 space-y-2 animate-pulse-light">
                       <div className="flex items-center space-x-2">
-                        <div className="h-4 w-4 rounded-full bg-notify-purple"></div>
+                        <div className="h-4 w-4 rounded-full bg-notify-neon"></div>
                         <span className="text-xs">@developer role mentioned</span>
                       </div>
                       <p className="text-xs text-white/70">Urgent: New API updates available...</p>
                     </div>
                     
-                    <div className="glass p-3 space-y-2 animate-pulse-light animate-delay-300">
+                    <div className="neo-glass p-3 space-y-2 animate-pulse-light animate-delay-300">
                       <div className="flex items-center space-x-2">
-                        <div className="h-4 w-4 rounded-full bg-notify-teal"></div>
+                        <div className="h-4 w-4 rounded-full bg-notify-lime"></div>
                         <span className="text-xs">@design role mentioned</span>
                       </div>
                       <p className="text-xs text-white/70">New UI designs ready for review...</p>
                     </div>
                     
-                    <div className="glass p-3 space-y-2 animate-pulse-light animate-delay-600">
+                    <div className="neo-glass p-3 space-y-2 animate-pulse-light animate-delay-600">
                       <div className="flex items-center space-x-2">
-                        <div className="h-4 w-4 rounded-full bg-notify-amber"></div>
+                        <div className="h-4 w-4 rounded-full bg-notify-green"></div>
                         <span className="text-xs">@moderator role mentioned</span>
                       </div>
                       <p className="text-xs text-white/70">Assistance needed in #support...</p>
@@ -106,13 +106,13 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-notify-purple/20 filter blur-3xl"></div>
-          <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-notify-blue/20 filter blur-3xl"></div>
+          <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-notify-neon/10 filter blur-3xl animate-pulse-light"></div>
+          <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-notify-lime/10 filter blur-3xl animate-pulse-light animate-delay-400"></div>
         </div>
       </div>
       
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-6 w-6 text-white/60" />
+        <ArrowDown className="h-6 w-6 text-notify-neon/60" />
       </div>
     </section>
   );
