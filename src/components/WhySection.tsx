@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { Users, CheckCircle } from 'lucide-react';
-
+import Home from '../assets/home.jpg';
 const WhySection = () => {
   return (
     <section id="why-notify" className="relative py-24 px-6 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-notify-darkgreen via-notify-darker to-black"></div>
-      
+
       {/* Background glow */}
       <div className="absolute bottom-40 right-1/3 w-96 h-96 bg-notify-neon/10 rounded-full blur-3xl -z-10 animate-pulse-light"></div>
-      
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="order-2 lg:order-1 appear-on-scroll">
           <div className="space-y-6">
@@ -17,15 +17,15 @@ const WhySection = () => {
               <Users className="h-4 w-4 text-notify-neon" />
               <span className="text-sm font-medium">Why Choose Notify</span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
               The <span className="neon-text animate-neon-pulse">Perfect Companion</span> for Discord Power Users
             </h2>
-            
+
             <p className="text-white/70">
               Notify was designed with community moderators, developers, and active Discord users in mind. Our app ensures you never miss critical information.
             </p>
-            
+
             <div className="space-y-4 pt-4 stagger-on-scroll">
               <div className="flex items-start space-x-3 neo-glass p-4 rounded-lg">
                 <div className="h-6 w-6 mt-0.5">
@@ -38,7 +38,7 @@ const WhySection = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3 neo-glass p-4 rounded-lg">
                 <div className="h-6 w-6 mt-0.5">
                   <CheckCircle className="h-6 w-6 text-notify-neon" />
@@ -50,7 +50,7 @@ const WhySection = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3 neo-glass p-4 rounded-lg">
                 <div className="h-6 w-6 mt-0.5">
                   <CheckCircle className="h-6 w-6 text-notify-neon" />
@@ -62,7 +62,7 @@ const WhySection = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3 neo-glass p-4 rounded-lg">
                 <div className="h-6 w-6 mt-0.5">
                   <CheckCircle className="h-6 w-6 text-notify-neon" />
@@ -77,14 +77,15 @@ const WhySection = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="order-1 lg:order-2 relative flex justify-center appear-on-scroll animate-rotate-in">
           <div className="relative z-10">
             <div className="w-64 h-[500px] md:w-72 md:h-[560px] rounded-[40px] p-2 neo-glass border-[3px] border-notify-neon/30 neon-shadow rotate-3 transform hover:rotate-0 transition-all duration-500">
               <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-black rounded-b-xl"></div>
               <div className="w-full h-full bg-black/80 rounded-[38px] flex items-center justify-center overflow-hidden">
                 <div className="w-full h-full flex flex-col">
-                  <div className="py-3 px-4 border-b border-notify-neon/20 flex items-center justify-between">
+                  <img src={Home} alt="login Image" />
+                  {/* <div className="py-3 px-4 border-b border-notify-neon/20 flex items-center justify-between">
                     <div className="text-sm font-medium">Settings</div>
                   </div>
                   
@@ -151,12 +152,12 @@ const WhySection = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-notify-neon/20 filter blur-3xl animate-pulse-light"></div>
           <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-notify-green/20 filter blur-3xl animate-pulse-light animate-delay-400"></div>
         </div>
