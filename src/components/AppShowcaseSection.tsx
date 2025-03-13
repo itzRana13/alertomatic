@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import {
   Smartphone,
@@ -34,10 +35,12 @@ const screenshots = [
     description: "Toggle notifications for each channel",
   },
 ];
+
 const AppShowcaseSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const maxIndex = 4;
+  const maxIndex = screenshots.length - 1;
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === maxIndex ? 0 : prevIndex + 1
@@ -64,15 +67,15 @@ const AppShowcaseSection = () => {
   }, [currentIndex]);
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-12 md:py-20 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-notify-darkgreen/40 via-notify-darker to-black"></div>
 
       {/* Animated background weaves */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute top-10 left-1/4 w-[800px] h-[800px] bg-notify-neon/5 rounded-full blur-3xl transform -translate-x-1/2 animate-pulse-light"></div>
-        <div className="absolute bottom-20 right-1/4 w-[600px] h-[600px] bg-notify-green/5 rounded-full blur-3xl transform translate-x-1/2 animate-pulse-light animate-delay-300"></div>
-        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-notify-lime/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 animate-pulse-light animate-delay-700"></div>
+        <div className="absolute top-10 left-1/4 w-[400px] md:w-[600px] lg:w-[800px] h-[400px] md:h-[600px] lg:h-[800px] bg-notify-neon/5 rounded-full blur-3xl transform -translate-x-1/2 animate-pulse-light"></div>
+        <div className="absolute bottom-20 right-1/4 w-[300px] md:w-[450px] lg:w-[600px] h-[300px] md:h-[450px] lg:h-[600px] bg-notify-green/5 rounded-full blur-3xl transform translate-x-1/2 animate-pulse-light animate-delay-300"></div>
+        <div className="absolute top-1/2 left-1/2 w-[250px] md:w-[350px] lg:w-[500px] h-[250px] md:h-[350px] lg:h-[500px] bg-notify-lime/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 animate-pulse-light animate-delay-700"></div>
       </div>
 
       {/* Animated grid lines */}
@@ -80,34 +83,34 @@ const AppShowcaseSection = () => {
         <div className="h-full w-full bg-[linear-gradient(to_right,#9eff0022_1px,transparent_1px),linear-gradient(to_bottom,#9eff0022_1px,transparent_1px)] bg-[size:30px_30px]"></div>
       </div>
 
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
           {/* Content Column */}
-          <div className="w-full lg:w-1/2 space-y-8 appear-on-scroll">
+          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 appear-on-scroll order-2 lg:order-1">
             <div className="inline-flex items-center space-x-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-notify-neon/30">
               <Smartphone className="h-4 w-4 text-notify-neon" />
               <span className="text-sm font-medium">Mobile Experience</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
               Streamlined <span className="neon-text">Notifications</span> in
               Your Pocket
             </h2>
 
-            <p className="text-lg text-white/80 max-w-lg">
+            <p className="text-base sm:text-lg text-white/80 max-w-lg">
               Notify puts the power of Discord role mentions right in your
               pocket, with a beautifully designed interface that makes staying
               updated effortless.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <div className="flex items-start space-x-4 neo-glass p-4 rounded-xl scale-on-scroll">
-                <div className="h-10 w-10 rounded-full bg-notify-neon/20 flex items-center justify-center flex-shrink-0">
-                  <ArrowRight className="h-5 w-5 text-notify-neon" />
+                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-notify-neon/20 flex items-center justify-center flex-shrink-0">
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-notify-neon" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Quick Access</h3>
-                  <p className="text-white/70">
+                  <h3 className="font-semibold text-base sm:text-lg">Quick Access</h3>
+                  <p className="text-sm sm:text-base text-white/70">
                     Tap any notification to instantly open the message in
                     Discord
                   </p>
@@ -115,14 +118,14 @@ const AppShowcaseSection = () => {
               </div>
 
               <div className="flex items-start space-x-4 neo-glass p-4 rounded-xl scale-on-scroll">
-                <div className="h-10 w-10 rounded-full bg-notify-lime/20 flex items-center justify-center flex-shrink-0">
-                  <Download className="h-5 w-5 text-notify-lime" />
+                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-notify-lime/20 flex items-center justify-center flex-shrink-0">
+                  <Download className="h-4 w-4 sm:h-5 sm:w-5 text-notify-lime" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-base sm:text-lg">
                     Available Everywhere
                   </h3>
-                  <p className="text-white/70">
+                  <p className="text-sm sm:text-base text-white/70">
                     Download for both Android and iOS to stay connected on any
                     device
                   </p>
@@ -133,16 +136,17 @@ const AppShowcaseSection = () => {
             <div className="pt-4">
               <a
                 href="#download"
-                className="button-transition inline-flex items-center space-x-2 bg-gradient-to-r from-notify-neon/80 to-notify-lime/80 text-black font-semibold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-notify-neon/20 hover:-translate-y-0.5"
+                className="button-transition inline-flex items-center space-x-2 bg-gradient-to-r from-notify-neon/80 to-notify-lime/80 text-black font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:shadow-lg hover:shadow-notify-neon/20 hover:-translate-y-0.5"
               >
-                <Download className="h-5 w-5" />
+                <Download className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Download Now</span>
               </a>
             </div>
           </div>
 
-          <div className=" w-full lg:w-1/2 order-1 lg:order-2 relative ">
-            <div className="relative h-[600px] w-[300px] mx-auto">
+          {/* Phone Mockup Column */}
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 relative">
+            <div className="relative mx-auto h-[400px] sm:h-[500px] md:h-[600px] w-[200px] sm:w-[250px] md:w-[300px]">
               {/* Phone frame */}
               <div className="absolute inset-0 rounded-[40px] border-8 border-gray-800 bg-black z-10 pointer-events-none shadow-xl"></div>
 
@@ -170,7 +174,7 @@ const AppShowcaseSection = () => {
               </div>
 
               {/* Navigation */}
-              <div className="absolute left-0 right-0 bottom-[calc(100%+20px)] flex justify-center gap-2 z-20">
+              <div className="absolute left-0 right-0 bottom-[-28px] flex justify-center gap-2 z-20">
                 {screenshots.map((_, index) => (
                   <button
                     key={index}
@@ -186,7 +190,7 @@ const AppShowcaseSection = () => {
               </div>
 
               {/* Caption */}
-              <div className="absolute left-0 right-0 bottom-[calc(100%+40px)] text-center">
+              <div className="absolute left-0 right-0 bottom-[-70px] text-center">
                 <h4 className="text-lg font-medium text-white">
                   {screenshots[currentIndex].title}
                 </h4>
@@ -195,21 +199,23 @@ const AppShowcaseSection = () => {
                 </p>
               </div>
 
-              {/* Arrow controls */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-[-60px] top-1/2 transform -translate-y-1/2 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-20"
-                aria-label="Previous screenshot"
-              >
-                <ChevronLeft className="h-6 w-6 text-white" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-[-60px] top-1/2 transform -translate-y-1/2 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-20"
-                aria-label="Next screenshot"
-              >
-                <ChevronRight className="h-6 w-6 text-white" />
-              </button>
+              {/* Arrow controls - Hidden on small screens, visible on larger screens */}
+              <div className="hidden sm:block">
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-[-40px] md:left-[-60px] top-1/2 transform -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-20"
+                  aria-label="Previous screenshot"
+                >
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-[-40px] md:right-[-60px] top-1/2 transform -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-20"
+                  aria-label="Next screenshot"
+                >
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
